@@ -1,0 +1,28 @@
+
+[core]
+	# pager = "/nix/store/4bxyzg5kwx79l5nfsn1j6axc9ig85bhx-delta-0.17.0/bin/delta"
+
+[delta]
+	conflictstyle = "diff3"
+
+[delta "interactive"]
+	keep-plus-minus-markers = true
+
+[diff]
+	colorMoved = "default"
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[interactive]
+	# diffFilter = "/nix/store/4bxyzg5kwx79l5nfsn1j6axc9ig85bhx-delta-0.17.0/bin/delta --color-only"
+
+[pull]
+	rebase = true
+
+[user]
+	email = "jnschurig@gmail.com"
+	name = "James Schurig"

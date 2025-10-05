@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ./create_link.sh ~/.config/ghostty
+./create_link.sh ~/.config/git
 ./create_link.sh ~/.config/helix
 ./create_link.sh ~/.config/hypr
 ./create_link.sh ~/.config/kitty
