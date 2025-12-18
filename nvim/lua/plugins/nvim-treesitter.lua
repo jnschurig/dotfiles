@@ -1,7 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = { "OXY2DEV/markview.nvim" }, -- <-- ensure markview loads first
+    -- dependencies = { "OXY2DEV/markview.nvim" }, -- <-- ensure markview loads first
     build = ":TSUpdate",
     opts = function(_, opts)
       opts = opts or {}
