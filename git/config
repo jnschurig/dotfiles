@@ -26,3 +26,5 @@
 [user]
 	email = "jnschurig@gmail.com"
 	name = "James Schurig"
+[init]
+	defaultBranch = main
