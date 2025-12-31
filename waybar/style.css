@@ -12,9 +12,9 @@
 /* Reset all styles */
 * {
     border: none;
-    border-radius: 3px;
+    border-radius: 0px;
     min-height: 0;
-    margin: 0.1em 0em 0.2em 0em;
+    margin: 0em 0em 0em 0em;
 }
 
 /* The whole bar */
@@ -22,7 +22,7 @@
     /* background-color: transparent; */
     /* background-color: #000000; */
     /* opacity: 0.8; */
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.3);
     color: #ffffff;
     /* transition-property: background-color; */
     /* transition-duration: 0.5s; */
