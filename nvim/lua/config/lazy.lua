@@ -33,7 +33,7 @@ require("lazy").setup({
   install = {
     colorscheme = {
       "ghosttysync",
-      "material",
+      -- "material",
       -- "tokyonight",
       -- "catppuccin",
     },
