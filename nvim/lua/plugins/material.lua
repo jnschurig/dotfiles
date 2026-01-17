@@ -1,3 +1,7 @@
+-- if true then
+--   return {}
+-- end
+
 return {
   "jnschurig/material.nvim",
   -- branch = "color_tweak",

@@ -3,14 +3,14 @@
 -- end
 
 return {
-  "jnschurig/ghosttysync.nvim",
-  -- branch = "v0.1",
+  "jnschurig/termsink.nvim",
+  branch = "v0",
   lazy = false,
   priority = 1001,
   config = function()
     -- vim.g.disable_background = true
     vim.g.material_style = "primary"
-    require("ghosttysync").setup({
+    require("termsink").setup({
       disable = { -- This works, but causes the lualine text to be WHITE
         background = false,
       },
@@ -23,6 +23,6 @@ return {
         strings = { italic = true },
       },
     })
-    vim.cmd.colorscheme("ghosttysync")
+    vim.cmd.colorscheme("termsink")
   end,
 }
