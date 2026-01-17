@@ -1,5 +1,5 @@
 # fonts
-font-size = 13
+font-size = 12
 font-family = "JetBrains Mono"
 
 font-style = "Bold"
@@ -9,12 +9,17 @@ font-style-bold-italic = "ExtraBold Italic"
 
 # appearance
 # theme = rose-pine-moon-custom
-theme = Material Design Colors
+# theme = Material Design Colors
 # theme = Adventure Time
+# theme = 12-bit Rainbow
 # theme = Afterglow
-# theme = Arcoiris
-# theme = Bluloco Dark
+theme = Arcoiris
+# theme = Andromeda
+# theme = Aardvark Blue
 # theme = Desert
+# theme = Alabaster
+# theme = 3024 Day
+# theme = Apple System Colors Light
 
 # General
 adjust-box-thickness = 1
