@@ -4,7 +4,7 @@
 
 return {
   "jnschurig/ghosttysync.nvim",
-  -- branch = "v0.1",
+  branch = "v0.2-claude",
   lazy = false,
   priority = 1001,
   config = function()
