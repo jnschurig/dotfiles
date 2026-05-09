@@ -31,10 +31,10 @@
         //"custom/gammastep"
     ],
     "modules-right": [
-        "backlight",
         // "custom/storage",
         // "memory",
         "cpu",
+        "backlight",
         "power-profiles-daemon",
         "battery",
         //"pulseaudio",
