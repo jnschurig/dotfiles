@@ -34,7 +34,7 @@
         "backlight",
         // "custom/storage",
         // "memory",
-        // "cpu",
+        "cpu",
         "power-profiles-daemon",
         "battery",
         //"pulseaudio",
