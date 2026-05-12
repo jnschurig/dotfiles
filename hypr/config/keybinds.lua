@@ -1,84 +1,18 @@
-require("config.defaults")
+local mod = mainMod
+local modshift = mainMod .. " + SHIFT"
 
-local binds = {
-	{
-		mod = mainMod,
-		key = "E",
-		action = action.exec,
-		arg = filemanager,
-		description = "Open file manager",
-	},
+hl.bind(mod .. " + E",      hl.dsp.exec_cmd(filemanager),  { description = "Open file manager" })
+hl.bind(mod .. " + SPACE",  hl.dsp.exec_cmd(applauncher),  { description = "Open app launcher" })
+hl.bind(mod .. " + Q",      hl.dsp.window.close(),         { description = "Close active window" })
+hl.bind(mod .. " + F",      hl.dsp.window.fullscreen(),    { description = "Toggle fullscreen" })
+hl.bind(modshift .. " + F", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
+hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(terminal),     { description = "Open terminal" })
 
-	{
-		mod = mainMod,
-		key = "SPACE",
-		action = action.exec,
-		arg = applauncher,
-		description = "Open app launcher",
-	},
-
-	{
-		mod = mainMod,
-		key = "Q",
-		action = action.killactive,
-		description = "Close active window",
-	},
-
-	{
-		mod = mainMod,
-		key = "F",
-		action = action.fullscreen,
-		description = "Toggle fullscreen",
-	},
-
-	{
-		mod = mainMod .. " SHIFT",
-		key = "F",
-		action = action.togglefloating,
-		description = "Toggle floating",
-	},
-
-	{
-		mod = mainMod,
-		key = "RETURN",
-		action = action.exec,
-		arg = terminal,
-		description = "Open terminal",
-	},
-
-	{
-		mod = "",
-		key = "XF86AudioRaiseVolume",
-		action = action.exec,
-		arg = "pamixer -i 5",
-	},
-
-	{
-		mod = "",
-		key = "XF86AudioLowerVolume",
-		action = action.exec,
-		arg = "pamixer -d 5",
-	},
-}
-
-for _, b in ipairs(binds) do
-	bind(b)
-end
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pamixer -i 5"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pamixer -d 5"))
 
 for i = 1, 10 do
 	local key = tostring(i % 10)
-
-	bind({
-		mod = mainMod,
-		key = key,
-		action = action.workspace,
-		arg = tostring(i),
-	})
-
-	-- bind({
-	-- 	mod = mainMod .. " SHIFT",
-	-- 	key = key,
-	-- 	action = action.movetoworkspace,
-	-- 	arg = tostring(i),
-	-- })
+	hl.bind(mod .. " + " .. key,      hl.dsp.focus({ workspace = i }))
+	hl.bind(modshift .. " + " .. key, hl.dsp.window.move({ workspace = i }))
 end

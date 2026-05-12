@@ -1,5 +1,3 @@
-require("config.defaults")
-
 local startup = {
 	set_colors,
 	"swaybg -o '*' -i " .. background_img .. " -m fill",
@@ -16,5 +14,5 @@ local startup = {
 }
 
 for _, cmd in ipairs(startup) do
-	hypr_exec_once(cmd)
+	hl.exec_cmd(cmd)
 end

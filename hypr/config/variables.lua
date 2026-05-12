@@ -10,7 +10,7 @@ local colors = {
 	cachygray = "rgba(798bb2ff)",
 }
 
-config({
+hl.config({
 	general = {
 		gaps_in = 3,
 		gaps_out = 5,
