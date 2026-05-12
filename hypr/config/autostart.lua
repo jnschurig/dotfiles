@@ -1,6 +1,6 @@
 local startup = {
-	set_colors,
-	"swaybg -o '*' -i " .. background_img .. " -m fill",
+	Set_colors,
+	"swaybg -o '*' -i " .. Background_img .. " -m fill",
 	"waybar",
 	"fcitx5 -d",
 	"mako",
@@ -10,7 +10,7 @@ local startup = {
 	"blueman-applet",
 	"systemctl --user import-environment",
 	"dbus-update-activation-environment --systemd",
-	"[workspace special silent; size 95% 5%; move 12.5% 10] " .. terminal,
+	"[workspace special silent; size 95% 5%; move 12.5% 10] " .. Terminal,
 }
 
 for _, cmd in ipairs(startup) do

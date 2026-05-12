@@ -12,12 +12,12 @@ end
 -- ┃                       General                               ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-bind(mod .. " + E", hl.dsp.exec_cmd(filemanager), { description = "Open file manager" })
-bind("SHIFT + Print", hl.dsp.exec_cmd(capturing), { description = "Screen capture selection" })
+bind(mod .. " + E", hl.dsp.exec_cmd(Filemanager), { description = "Open file manager" })
+bind("SHIFT + Print", hl.dsp.exec_cmd(Capturing), { description = "Screen capture selection" })
 bind(mod .. " + Q", hl.dsp.window.close(), { description = "Close active window" })
 bind(mod .. " + F", hl.dsp.window.fullscreen(), { description = "Toggle fullscreen" })
 bind(modshift .. " + F", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
-bind(mod .. " + SPACE", hl.dsp.exec_cmd(applauncher), { description = "App launcher" })
+bind(mod .. " + SPACE", hl.dsp.exec_cmd(Applauncher), { description = "App launcher" })
 bind(mod .. " + Y", hl.dsp.window.pin(), { description = "Pin window across workspaces" })
 bind(modshift .. " + J", hl.dsp.layout("togglesplit"), { description = "Toggle split (dwindle)" })
 bind(modshift .. " + P", hl.dsp.exec_cmd("~/.config/rofi/poweroff.sh"), { description = "Rofi power menu" })
