@@ -1,4 +1,4 @@
-local popout_classes = {
+local sidebar_classes = {
   { name = "blueman-manager"           , ratio = 0.25, min_width = 528, max_width = 550 },
   { name = "org.pulseaudio.pavucontrol", ratio = 0.35, min_width = 716, max_width = 800 },
 }
@@ -8,18 +8,19 @@ hl.window_rule({
   float = true,
 })
 
--- Dynamic Popout Panes
-for _, pop in ipairs(popout_classes) do
+-- Dynamic Sidebar Panes
+for _, sidebar in ipairs(sidebar_classes) do
   hl.window_rule({
-    match = { class = "^(" .. pop.name .. ")$" },
+    match = { class = "^(" .. sidebar.name .. ")$" },
     float = true,
     pin = true,
     animation = "slide right",
-    min_size = { pop.min_width, "(monitor_h-50)" },
-    max_size = { pop.max_width, "(monitor_h-50)" }, -- Not enforced for some reason...
-    size = { "monitor_w*" .. pop.ratio, "(monitor_h-50)" },
+    min_size = { sidebar.min_width, "(monitor_h-50)" },
+    max_size = { sidebar.max_width, "(monitor_h-50)" }, -- Not enforced for some reason...
+    size = { "monitor_w*" .. sidebar.ratio, "(monitor_h-50)" },
     move = { "monitor_w-window_w-10", 45 },
     opacity = "0.95 override 0.6 override",
+    tag = "sidebar"
   })
 end
 
