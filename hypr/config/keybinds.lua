@@ -5,7 +5,7 @@ local modalt = mainMod .. " + ALT"
 local shiftalt = "SHIFT + ALT"
 
 local function bind(keys, dispatcher, opts)
-	hl.bind(keys, dispatcher, opts or {})
+  hl.bind(keys, dispatcher, opts or {})
 end
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -29,9 +29,9 @@ bind(modshift .. " + P", hl.dsp.exec_cmd("~/.config/rofi/poweroff.sh"), { descri
 bind(modctrl .. " + B", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"), { description = "Reload waybar" })
 bind(modctrl .. " + N", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"), { description = "Kill waybar" })
 bind(
-	modctrl .. " + R",
-	hl.dsp.exec_cmd("hyprctl reload | notify-send 'Hyprctl Reload Complete'"),
-	{ description = "Reload Hyprland config" }
+  modctrl .. " + R",
+  hl.dsp.exec_cmd("hyprctl reload | notify-send 'Hyprctl Reload Complete'"),
+  { description = "Reload Hyprland config" }
 )
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -39,9 +39,9 @@ bind(
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 bind(
-	modshift .. " + G",
-	hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/gamemode.sh"),
-	{ description = "Game mode toggle" }
+  modshift .. " + G",
+  hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/gamemode.sh"),
+  { description = "Game mode toggle" }
 )
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -78,9 +78,9 @@ bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s +5%"), { repeating 
 bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"), { repeating = true })
 bind("SHIFT + XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -d *::kbd_backlight set +33%"), { repeating = true })
 bind(
-	"SHIFT + XF86MonBrightnessDown",
-	hl.dsp.exec_cmd("brightnessctl -d *::kbd_backlight set 33%-"),
-	{ repeating = true }
+  "SHIFT + XF86MonBrightnessDown",
+  hl.dsp.exec_cmd("brightnessctl -d *::kbd_backlight set 33%-"),
+  { repeating = true }
 )
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -88,24 +88,24 @@ bind(
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 local directions = {
-	left = { dir = "l", x = -15, y = 0 },
-	right = { dir = "r", x = 15, y = 0 },
-	up = { dir = "u", x = 0, y = -15 },
-	down = { dir = "d", x = 0, y = 15 },
-	h = { dir = "l", x = -15, y = 0 },
-	l = { dir = "r", x = 15, y = 0 },
-	k = { dir = "u", x = 0, y = -15 },
-	j = { dir = "d", x = 0, y = 15 },
+  left = { dir = "l", x = -15, y = 0 },
+  right = { dir = "r", x = 15, y = 0 },
+  up = { dir = "u", x = 0, y = -15 },
+  down = { dir = "d", x = 0, y = 15 },
+  h = { dir = "l", x = -15, y = 0 },
+  l = { dir = "r", x = 15, y = 0 },
+  k = { dir = "u", x = 0, y = -15 },
+  j = { dir = "d", x = 0, y = 15 },
 }
 
 for key, d in pairs(directions) do
-	bind(modshift .. " + " .. key, hl.dsp.window.swap({ direction = d.dir }), { description = "Move window " .. d.dir })
-	bind(mod .. " + " .. key, hl.dsp.focus({ direction = d.dir }), { description = "Focus " .. d.dir })
-	bind(
-		modalt .. " + " .. key,
-		hl.dsp.window.resize({ x = d.x, y = d.y }),
-		{ repeating = true, description = "Resize " .. d.dir }
-	)
+  bind(modshift .. " + " .. key, hl.dsp.window.swap({ direction = d.dir }), { description = "Move window " .. d.dir })
+  bind(mod .. " + " .. key, hl.dsp.focus({ direction = d.dir }), { description = "Focus " .. d.dir })
+  bind(
+    modalt .. " + " .. key,
+    hl.dsp.window.resize({ x = d.x, y = d.y }),
+    { repeating = true, description = "Resize " .. d.dir }
+  )
 end
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -113,17 +113,17 @@ end
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 for i = 1, 10 do
-	local key = tostring(i % 10)
-	-- Switch to workspace
-	bind(mod .. " + " .. key, hl.dsp.focus({ workspace = i }), { description = "Workspace " .. i })
-	-- Move window to workspace and follow
-	bind(modshift .. " + " .. key, hl.dsp.window.move({ workspace = i }), { description = "Move window to ws " .. i })
-	-- Move window silently (alt+shift)
-	bind(
-		"ALT + SHIFT + " .. key,
-		hl.dsp.window.move({ workspace = i, silent = true }),
-		{ description = "Silently move window to ws " .. i }
-	)
+  local key = tostring(i % 10)
+  -- Switch to workspace
+  bind(mod .. " + " .. key, hl.dsp.focus({ workspace = i }), { description = "Workspace " .. i })
+  -- Move window to workspace and follow
+  bind(modshift .. " + " .. key, hl.dsp.window.move({ workspace = i }), { description = "Move window to ws " .. i })
+  -- Move window silently (alt+shift)
+  bind(
+    "ALT + SHIFT + " .. key,
+    hl.dsp.window.move({ workspace = i, silent = true }),
+    { description = "Silently move window to ws " .. i }
+  )
 end
 
 -- Workspace scrolling
