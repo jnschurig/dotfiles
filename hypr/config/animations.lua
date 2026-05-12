@@ -1,4 +1,4 @@
-hl.config({
+config({
 	animations = {
 		enabled = true,
 

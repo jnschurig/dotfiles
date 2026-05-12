@@ -4,7 +4,7 @@ local binds = {
 	{
 		mod = mainMod,
 		key = "E",
-		action = hl.action.exec,
+		action = action.exec,
 		arg = filemanager,
 		description = "Open file manager",
 	},
@@ -12,7 +12,7 @@ local binds = {
 	{
 		mod = mainMod,
 		key = "SPACE",
-		action = hl.action.exec,
+		action = action.exec,
 		arg = applauncher,
 		description = "Open app launcher",
 	},
@@ -20,28 +20,28 @@ local binds = {
 	{
 		mod = mainMod,
 		key = "Q",
-		action = hl.action.killactive,
+		action = action.killactive,
 		description = "Close active window",
 	},
 
 	{
 		mod = mainMod,
 		key = "F",
-		action = hl.action.fullscreen,
+		action = action.fullscreen,
 		description = "Toggle fullscreen",
 	},
 
 	{
 		mod = mainMod .. " SHIFT",
 		key = "F",
-		action = hl.action.togglefloating,
+		action = action.togglefloating,
 		description = "Toggle floating",
 	},
 
 	{
 		mod = mainMod,
 		key = "RETURN",
-		action = hl.action.exec,
+		action = action.exec,
 		arg = terminal,
 		description = "Open terminal",
 	},
@@ -49,36 +49,36 @@ local binds = {
 	{
 		mod = "",
 		key = "XF86AudioRaiseVolume",
-		action = hl.action.exec,
+		action = action.exec,
 		arg = "pamixer -i 5",
 	},
 
 	{
 		mod = "",
 		key = "XF86AudioLowerVolume",
-		action = hl.action.exec,
+		action = action.exec,
 		arg = "pamixer -d 5",
 	},
 }
 
-for _, bind in ipairs(binds) do
-	hl.bind(bind)
+for _, b in ipairs(binds) do
+	bind(b)
 end
 
 for i = 1, 10 do
 	local key = tostring(i % 10)
 
-	hl.bind({
+	bind({
 		mod = mainMod,
 		key = key,
-		action = hl.action.workspace,
+		action = action.workspace,
 		arg = tostring(i),
 	})
 
-	hl.bind({
-		mod = mainMod .. " SHIFT",
-		key = key,
-		action = hl.action.movetoworkspace,
-		arg = tostring(i),
-	})
+	-- bind({
+	-- 	mod = mainMod .. " SHIFT",
+	-- 	key = key,
+	-- 	action = action.movetoworkspace,
+	-- 	arg = tostring(i),
+	-- })
 end

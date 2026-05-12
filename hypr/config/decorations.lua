@@ -1,4 +1,4 @@
-hl.config({
+config({
 	decoration = {
 		active_opacity = 1,
 		rounding = 4,

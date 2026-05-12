@@ -1,6 +1,6 @@
 require("config.defaults")
 
-local exec_once = {
+local startup = {
 	set_colors,
 	"swaybg -o '*' -i " .. background_img .. " -m fill",
 	"waybar",
@@ -15,6 +15,6 @@ local exec_once = {
 	"[workspace special silent; size 95% 5%; move 12.5% 10] " .. terminal,
 }
 
-for _, cmd in ipairs(exec_once) do
-	hl.exec_once(cmd)
+for _, cmd in ipairs(startup) do
+	hypr_exec_once(cmd)
 end

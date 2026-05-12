@@ -7,12 +7,12 @@ local rules = {
 }
 
 for _, rule in ipairs(rules) do
-	hl.windowrule(rule)
+	windowrule(rule)
 end
 
-hl.workspace_rule("w[tv1-10], gapsout:5, gapsin:3")
-hl.workspace_rule("f[1], gapsout:5, gapsin:3")
+workspace_rule("w[tv1-10], gapsout:5, gapsin:3")
+workspace_rule("f[1], gapsout:5, gapsin:3")
 
-hl.layerrule("animation slide down waybar")
-hl.layerrule("animation slide top overlay")
-hl.layerrule("animation fade 50% background")
+layerrule("animation slide down waybar")
+layerrule("animation slide top overlay")
+layerrule("animation fade 50% background")
