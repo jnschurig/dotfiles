@@ -50,7 +50,6 @@ hl.config({
 		font_family = "Fira Sans",
 		splash_font_family = "Fira Sans",
 		disable_hyprland_logo = true,
-		col_splash = colors.cachylgreen,
 		background_color = colors.cachydblue,
 		enable_swallow = true,
 		swallow_regex = "^(cachy-browser|firefox|nautilus|nemo|thunar|btrfs-assistant.)$",
@@ -64,7 +63,6 @@ hl.config({
 
 	dwindle = {
 		special_scale_factor = 0.95,
-		pseudotile = true,
 		preserve_split = true,
 	},
 

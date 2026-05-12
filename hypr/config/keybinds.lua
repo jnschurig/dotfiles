@@ -75,17 +75,20 @@ bind("SHIFT + XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -d *::kbd_b
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 local directions = {
-	left  = "l", right = "r", up = "u", down = "d",
-	h = "l",     l     = "r", k  = "u", j    = "d",
+	left  = { dir = "l", x = -15, y =   0 },
+	right = { dir = "r", x =  15, y =   0 },
+	up    = { dir = "u", x =   0, y = -15 },
+	down  = { dir = "d", x =   0, y =  15 },
+	h     = { dir = "l", x = -15, y =   0 },
+	l     = { dir = "r", x =  15, y =   0 },
+	k     = { dir = "u", x =   0, y = -15 },
+	j     = { dir = "d", x =   0, y =  15 },
 }
 
-for key, dir in pairs(directions) do
-	-- Move active window in a direction
-	bind(modshift .. " + " .. key, hl.dsp.window.swap({ direction = dir }), { description = "Move window " .. dir })
-	-- Move focus
-	bind(mod .. " + " .. key,      hl.dsp.focus({ direction = dir }),       { description = "Focus " .. dir })
-	-- Resize window
-	bind(modalt .. " + " .. key,   hl.dsp.window.resize({ direction = dir, delta = 15 }), { repeating = true, description = "Resize " .. dir })
+for key, d in pairs(directions) do
+	bind(modshift .. " + " .. key, hl.dsp.window.swap({ direction = d.dir }), { description = "Move window " .. d.dir })
+	bind(mod .. " + " .. key,      hl.dsp.focus({ direction = d.dir }),       { description = "Focus " .. d.dir })
+	bind(modalt .. " + " .. key,   hl.dsp.window.resize({ x = d.x, y = d.y }), { repeating = true, description = "Resize " .. d.dir })
 end
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
