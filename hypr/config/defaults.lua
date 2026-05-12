@@ -1,4 +1,4 @@
-filemanager = "dolphin"
+filemanager = "nautilus"
 applauncher = "rofi -show run -modi window,run,combi -combi-modi window,run"
 background_img = os.getenv("HOME") .. "/Pictures/wallpaper/lock_screen/crossing_in_japan.jpg"
 terminal = "ghostty"
