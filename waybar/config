@@ -226,7 +226,7 @@
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         // "today-format": "<b>{}</b>",
         // "on-click": "gsimplecal"
-        "on-click": "gsimplecal & (sleep 0.2 && while hyprctl activewindow | grep -q gsimplecal; do sleep 0.1; done; pkill gsimplecal) &"
+        // "on-click": "gsimplecal & (sleep 0.2 && while hyprctl activewindow | grep -q gsimplecal; do sleep 0.1; done; pkill gsimplecal) &" // this is a duplicate
     },
 
     "clock#date": {
