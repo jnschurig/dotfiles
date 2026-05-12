@@ -20,7 +20,7 @@ for _, sidebar in ipairs(sidebar_classes) do
     size = { "monitor_w*" .. sidebar.ratio, "(monitor_h-50)" },
     move = { "monitor_w-window_w-10", 45 },
     opacity = "0.95 override 0.6 override",
-    tag = "sidebar"
+    tag = "+sidebar"
   })
 end
 
