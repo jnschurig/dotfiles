@@ -1,5 +1,3 @@
-mainMod = "SUPER"
-
 package.path = package.path .. ";./?.lua;./?/init.lua"
 
 require("config.defaults")

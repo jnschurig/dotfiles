@@ -1,3 +1,4 @@
+local mainMod = "SUPER"
 local mod = mainMod
 local modshift = mainMod .. " + SHIFT"
 local modctrl = mainMod .. " + CTRL"
