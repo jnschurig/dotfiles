@@ -13,6 +13,8 @@ local startup = {
 	"[workspace special silent; size 95% 5%; move 12.5% 10] " .. Terminal,
 }
 
-for _, cmd in ipairs(startup) do
-	hl.exec_cmd(cmd)
-end
+hl.on("hyprland.start", function()
+	for _, cmd in ipairs(startup) do
+		hl.exec_cmd(cmd)
+	end
+end)
