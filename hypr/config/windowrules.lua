@@ -14,6 +14,13 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { class = "^(gsimplecal)$" },
+	float = true,
+	pin = true,
+	move = { "cursor_x-(window_w*0.5)", 40 },
+})
+
+hl.window_rule({
 	match = { class = "^(discord|armcord|webcord|legcord)$" },
 	opacity = 0.96,
 })
