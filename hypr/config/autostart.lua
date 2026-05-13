@@ -1,6 +1,6 @@
 local startup = {
-  Set_colors,
-  "swaybg -o '*' -i " .. Background_img .. " -m fill",
+  SetColors,
+  "swaybg -o '*' -i " .. BackgroundImg .. " -m fill",
   "waybar",
   "fcitx5 -d",
   "mako",
