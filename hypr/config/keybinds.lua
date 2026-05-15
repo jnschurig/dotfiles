@@ -39,7 +39,7 @@ bind(
 -- ┃                       Game Mode                             ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-bind(
+bind( -- Game mode script is broken because it doesn't use the newer dispatch methods.
   modshift .. " + G",
   hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/gamemode.sh"),
   { description = "Game mode toggle" }
@@ -122,7 +122,7 @@ for i = 1, 10 do
   -- Move window silently (alt+shift)
   bind(
     "ALT + SHIFT + " .. key,
-    hl.dsp.window.move({ workspace = i, silent = true }),
+    hl.dsp.window.move({ workspace = i, follow = false }),
     { description = "Silently move window to ws " .. i }
   )
 end
@@ -140,14 +140,20 @@ bind(mod .. " + slash", hl.dsp.focus({ workspace = "previous" }))
 -- ┃                    Special Workspaces                       ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-bind(mod .. " + RETURN", hl.dsp.workspace.toggle_special())
-bind(mod .. " + ESCAPE", hl.dsp.workspace.toggle_special())
-bind(modshift .. " + ESCAPE", hl.dsp.window.move({ workspace = "special" }))
-bind(shiftalt .. " + ESCAPE", hl.dsp.window.move({ workspace = "special", silent = true }))
+bind(mod .. " + RETURN", hl.dsp.workspace.toggle_special("terminal"))
+bind(modshift .. " + RETURN", hl.dsp.window.move({ workspace = "special:terminal" }))
+bind(shiftalt .. " + RETURN", hl.dsp.window.move({ workspace = "special:terminal", follow = false }))
+bind(mod .. " + ESCAPE", hl.dsp.workspace.toggle_special("terminal"))
+bind(modshift .. " + ESCAPE", hl.dsp.window.move({ workspace = "special:terminal" }))
+bind(shiftalt .. " + ESCAPE", hl.dsp.window.move({ workspace = "special:terminal", follow = false }))
 
 bind(mod .. " + grave", hl.dsp.workspace.toggle_special("scratchpad"))
 bind(modshift .. " + grave", hl.dsp.window.move({ workspace = "special:scratchpad" }))
-bind(shiftalt .. " + grave", hl.dsp.window.move({ workspace = "special:scratchpad", silent = true }))
+bind(shiftalt .. " + grave", hl.dsp.window.move({ workspace = "special:scratchpad", follow = false }))
+
+bind(mod .. " + m", hl.dsp.workspace.toggle_special("music"))
+bind(modshift .. " + m", hl.dsp.window.move({ workspace = "special:music" }))
+bind(shiftalt .. " + m", hl.dsp.window.move({ workspace = "special:music", follow = false }))
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 -- ┃                     Mouse Bindings                          ┃

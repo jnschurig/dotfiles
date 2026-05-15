@@ -1,12 +1,7 @@
 local sidebar_classes = {
-  { name = "blueman-manager"           , ratio = 0.25, min_width = 528, max_width = 550 },
+  { name = "blueman-manager", ratio = 0.25, min_width = 528, max_width = 550 },
   { name = "org.pulseaudio.pavucontrol", ratio = 0.35, min_width = 716, max_width = 800 },
 }
-
-hl.window_rule({
-  match = { class = "^()$", title = "^(Picture in picture)$" },
-  float = true,
-})
 
 -- Dynamic Sidebar Panes
 for _, sidebar in ipairs(sidebar_classes) do
@@ -20,9 +15,14 @@ for _, sidebar in ipairs(sidebar_classes) do
     size = { "monitor_w*" .. sidebar.ratio, "(monitor_h-50)" },
     move = { "monitor_w-window_w-10", 45 },
     opacity = "0.95 override 0.6 override",
-    tag = "+sidebar"
+    tag = "+sidebar",
   })
 end
+
+hl.window_rule({
+  match = { class = "^()$", title = "^(Picture in picture)$" },
+  float = true,
+})
 
 hl.window_rule({
   match = { class = "^(gsimplecal)$" },
@@ -36,9 +36,21 @@ hl.window_rule({
   opacity = 0.96,
 })
 
-hl.workspace_rule({ workspace = "w[tv1-10]", gaps_out = 5, gaps_in = 3 })
-hl.workspace_rule({ workspace = "f[1]"     , gaps_out = 5, gaps_in = 3 })
+hl.window_rule({
+  match = { class = "org.strawberrymusicplayer.strawberry" },
+  -- opacity = 0.96,
+  workspace = "special:music",
+})
 
-hl.layer_rule({ match = { namespace = "waybar"     }, animation = "slide down" })
-hl.layer_rule({ match = { namespace = "overlay"    }, animation = "slide top"  })
-hl.layer_rule({ match = { namespace = "background" }, animation = "fade 50%"   })
+hl.window_rule({
+  match = { class = "com.mitchellh.ghostty" },
+  opacity = "0.9 override",
+})
+
+hl.workspace_rule({ workspace = "w[tv1-10]", gaps_out = 5, gaps_in = 3 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 5, gaps_in = 3 })
+
+hl.layer_rule({ match = { namespace = "waybar" }, animation = "slide down" })
+hl.layer_rule({ match = { namespace = "overlay" }, animation = "slide top" })
+hl.layer_rule({ match = { namespace = "background" }, animation = "fade 50%" })
+-- hl.layer_rule({ match = { class = "background" }, animation = "fade 50%"   })
