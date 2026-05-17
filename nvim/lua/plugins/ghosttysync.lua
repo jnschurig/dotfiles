@@ -4,15 +4,15 @@
 
 return {
   "jnschurig/ghosttysync.nvim",
-  branch = "v0.2-claude",
+  branch = "main",
   lazy = false,
   priority = 1001,
   config = function()
     -- vim.g.disable_background = true
     vim.g.material_style = "primary"
     require("ghosttysync").setup({
-      disable = { -- This works, but causes the lualine text to be WHITE
-        background = false,
+      disable = {
+        background = true,
       },
       plugins = {
         -- "neo-tree",
