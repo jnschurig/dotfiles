@@ -62,7 +62,7 @@ hl.config({
   },
 
   dwindle = {
-    special_scale_factor = 1,
+    special_scale_factor = 0.96,
     preserve_split       = true,
   },
 
