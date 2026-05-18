@@ -8,7 +8,6 @@ return {
   lazy = false,
   priority = 1001,
   config = function()
-    -- vim.g.disable_background = true
     vim.g.material_style = "primary"
     require("ghosttysync").setup({
       disable = {

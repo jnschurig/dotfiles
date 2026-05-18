@@ -19,6 +19,25 @@ for _, sidebar in ipairs(sidebar_classes) do
   })
 end
 
+local dropdown_classes = {
+  { name = "org.strawberrymusicplayer.strawberry", ratio = 0.25, min_height = 300, max_height = 1000 },
+}
+
+-- Dynamic Dropdown Panes
+for _, dropdown in ipairs(dropdown_classes) do
+  hl.window_rule({
+    match = { class = "^(" .. dropdown.name .. ")$" },
+    float = true,
+    min_size = { "monitor_w*0.95", dropdown.min_height },
+    max_size = { "monitor_w*0.95", dropdown.max_height },
+    size = { "monitor_w*0.95", "monitor_h*".. dropdown.ratio },
+    move = { "(monitor_w-window_w)/2", 45 },
+    opacity = "0.85 override 0.6 override",
+    tag = "+dropdown",
+    workspace = "special:music",
+  })
+end
+
 hl.window_rule({
   match = { class = "^()$", title = "^(Picture in picture)$" },
   float = true,
@@ -37,20 +56,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-  match = { class = "org.strawberrymusicplayer.strawberry" },
-  -- opacity = 0.96,
-  workspace = "special:music",
-})
-
-hl.window_rule({
   match = { class = "com.mitchellh.ghostty" },
   opacity = "0.9 override",
 })
-
-hl.workspace_rule({ workspace = "w[tv1-10]", gaps_out = 5, gaps_in = 3 })
-hl.workspace_rule({ workspace = "f[1]", gaps_out = 5, gaps_in = 3 })
-
-hl.layer_rule({ match = { namespace = "waybar" }, animation = "slide down" })
-hl.layer_rule({ match = { namespace = "overlay" }, animation = "slide top" })
-hl.layer_rule({ match = { namespace = "background" }, animation = "fade 50%" })
--- hl.layer_rule({ match = { class = "background" }, animation = "fade 50%"   })

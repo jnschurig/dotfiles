@@ -1,8 +1,7 @@
-local mainMod = "SUPER"
-local mod = mainMod
-local modshift = mainMod .. " + SHIFT"
-local modctrl = mainMod .. " + CTRL"
-local modalt = mainMod .. " + ALT"
+local mod = "SUPER"
+local modshift = mod .. " + SHIFT"
+local modctrl = mod .. " + CTRL"
+local modalt = mod .. " + ALT"
 local shiftalt = "SHIFT + ALT"
 
 local function bind(keys, dispatcher, opts)
@@ -160,5 +159,10 @@ bind(shiftalt .. " + m", hl.dsp.window.move({ workspace = "special:music", follo
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 -- NOTE: drag-to-move/resize bindings use the `drag` opt + window.drag/resize dispatchers
-bind(mod .. " + mouse:272", hl.dsp.window.drag(), { drag = true, description = "Drag move window" })
-bind(mod .. " + mouse:273", hl.dsp.window.resize(), { drag = true, description = "Drag resize window" })
+-- bind("ALT + mouse:272", hl.dsp.window.drag(), { mouse = true})
+-- bind(mod .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })
+
+bind("SUPER + ALT", hl.dsp.window.drag(), { mouse = true})
+bind(mod .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })
+
+-- bind(modalt, hl.dsp.window.resize(), { mouse = true })

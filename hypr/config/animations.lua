@@ -15,8 +15,12 @@ local anims = {
   { leaf = "border",              speed = 5, bezier = "default" },
   { leaf = "workspacesIn",        speed = 6, bezier = "overshot", style = "slide" },
   { leaf = "workspacesOut",       speed = 6, bezier = "overshot", style = "slidefade 80%" },
-  { leaf = "specialWorkspaceIn",  speed = 4, bezier = "overshot", style = "slidevert" },
-  { leaf = "specialWorkspaceOut", speed = 4, bezier = "overshot", style = "slidefadevert 80%" },
+
+  -- Still deciding if I like not having the overshot bezier
+  -- { leaf = "specialWorkspaceIn",  speed = 4, bezier = "overshot", style = "slide top" },
+  -- { leaf = "specialWorkspaceOut", speed = 4, bezier = "overshot", style = "slide bottom 80%" },
+  { leaf = "specialWorkspaceIn",  speed = 4, bezier = "default", style = "slide top" },
+  { leaf = "specialWorkspaceOut", speed = 4, bezier = "default", style = "slide bottom 80%" },
 }
 
 for _, a in ipairs(anims) do

@@ -62,20 +62,12 @@ hl.config({
   },
 
   dwindle = {
-    special_scale_factor = 0.95,
+    special_scale_factor = 1,
     preserve_split       = true,
   },
 
   master = {
     new_status           = "master",
     special_scale_factor = 0.8,
-  },
-
-  binds = {
-    allow_workspace_cycles            = 1,
-    workspace_back_and_forth          = 1,
-    workspace_center_on               = 1,
-    movefocus_cycles_fullscreen       = true,
-    window_direction_monitor_fallback = true,
   },
 })
