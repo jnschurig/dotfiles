@@ -159,10 +159,5 @@ bind(shiftalt .. " + m", hl.dsp.window.move({ workspace = "special:music", follo
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 -- NOTE: drag-to-move/resize bindings use the `drag` opt + window.drag/resize dispatchers
--- bind("ALT + mouse:272", hl.dsp.window.drag(), { mouse = true})
--- bind(mod .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })
-
-bind("SUPER + ALT", hl.dsp.window.drag(), { mouse = true})
-bind(mod .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })
-
--- bind(modalt, hl.dsp.window.resize(), { mouse = true })
+bind("CONTROL + SUPER + ALT_L", hl.dsp.window.drag(), { mouse = true })
+bind("SUPER + ALT_L", hl.dsp.window.resize(), { mouse = true })
