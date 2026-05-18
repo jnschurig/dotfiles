@@ -22,9 +22,9 @@ hl.workspace_rule({
 })
 
 -- Make solo windows not have borers, gaps, and rounding
-hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
-hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
-hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
+-- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+-- hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
+-- hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
 
 -- Not sure what these are, but they are the same as above, but for "f" worksapces.
 -- hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
