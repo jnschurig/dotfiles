@@ -11,6 +11,9 @@ hl.config({
     kb_options = "ctrl:nocaps", -- set capslock = ctrl
     follow_mouse = 2,
     float_switch_override_focus = 2,
+    touchpad = {
+      disable_while_typing = true,
+    },
   },
 })
 

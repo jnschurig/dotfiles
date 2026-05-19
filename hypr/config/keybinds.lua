@@ -38,11 +38,8 @@ bind(
 -- ┃                       Game Mode                             ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-bind( -- Game mode script is broken because it doesn't use the newer dispatch methods.
-  modshift .. " + G",
-  hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/gamemode.sh"),
-  { description = "Game mode toggle" }
-)
+-- function ToggleGameMode defined in gamemode.lua and imported in hyprland.lua
+bind(modshift .. " + G", ToggleGameMode)
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 -- ┃                      Grouping Windows                       ┃
@@ -161,3 +158,7 @@ bind(shiftalt .. " + m", hl.dsp.window.move({ workspace = "special:music", follo
 -- NOTE: drag-to-move/resize bindings use the `drag` opt + window.drag/resize dispatchers
 bind("CONTROL + SUPER + ALT_L", hl.dsp.window.drag(), { mouse = true })
 bind("SUPER + ALT_L", hl.dsp.window.resize(), { mouse = true })
+
+
+
+
