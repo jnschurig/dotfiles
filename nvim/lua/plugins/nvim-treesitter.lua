@@ -32,6 +32,7 @@ return {
         "vimdoc",
         "vue",
         "yaml",
+        "zig",
       })
       -- comment
       opts.indent = opts.indent or {}
