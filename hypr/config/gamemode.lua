@@ -1,6 +1,7 @@
 -- Settings
 local notification_duration = 3000
 local notifucation_font_size = 20
+local message = "🎮"
 
 -- Toggle variable
 local gamemode = false
@@ -22,22 +23,22 @@ function ToggleGameMode()
           enabled = false,
         },
 
-        shadow = { enabled = false, },
+        shadow = { enabled = false },
       },
 
       general = {
-        gaps_in     = 0,
-        gaps_out    = 0,
+        gaps_in = 0,
+        gaps_out = 0,
         border_size = 3,
 
-        snap = { enabled = false, },
+        snap = { enabled = false },
       },
     })
 
     gamemode = true
 
     hl.notification.create({
-      text="🎮 Game Mode Enabled!",
+      text = message,
       duration = notification_duration,
       font_size = notifucation_font_size,
       icon = "ok",
@@ -47,7 +48,7 @@ function ToggleGameMode()
     gamemode = false
 
     hl.notification.create({
-      text="🎮 Game Mode Disabled!",
+      text = message,
       duration = notification_duration,
       font_size = notifucation_font_size,
       icon = "error",

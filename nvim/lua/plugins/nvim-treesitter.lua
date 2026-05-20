@@ -33,9 +33,12 @@ return {
         "vue",
         "yaml",
       })
-
+      -- comment
       opts.indent = opts.indent or {}
-      opts.indent.enable = true
+      opts.indent = {
+        enable = true,
+        disable = { "lua" },
+      }
       return opts
     end,
   },
