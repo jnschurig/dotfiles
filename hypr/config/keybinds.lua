@@ -12,15 +12,16 @@ end
 -- ┃                       General                               ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-bind(mod .. " + E", hl.dsp.exec_cmd(FileManager), { description = "Open file manager" })
-bind("SHIFT + Print", hl.dsp.exec_cmd(Capturing), { description = "Screen capture selection" })
-bind(mod .. " + Q", hl.dsp.window.close(), { description = "Close active window" })
-bind(mod .. " + F", hl.dsp.window.fullscreen(), { description = "Toggle fullscreen" })
+bind(mod      .. " + E", hl.dsp.exec_cmd(FileManager), { description = "Open file manager" })
+bind("Print"           , hl.dsp.exec_cmd(CaptureFull), { description = "Screen capture selection" })
+bind("SHIFT + Print"   , hl.dsp.exec_cmd(CaptureArea), { description = "Screen capture selection" })
+bind(mod      .. " + Q", hl.dsp.window.close(), { description = "Close active window" })
+bind(mod      .. " + F", hl.dsp.window.fullscreen(), { description = "Toggle fullscreen" })
 bind(modshift .. " + F", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
-bind(mod .. " + SPACE", hl.dsp.exec_cmd(AppLauncher), { description = "App launcher" })
-bind(mod .. " + Y", hl.dsp.window.pin(), { description = "Pin window across workspaces" })
-bind(modshift .. " + J", hl.dsp.layout("togglesplit"), { description = "Toggle split (dwindle)" })
+bind(mod      .. " + Y", hl.dsp.window.pin(), { description = "Pin window across workspaces" })
+bind(modshift .. " + Y", hl.dsp.layout("togglesplit"), { description = "Toggle split (dwindle)" })
 bind(modshift .. " + P", hl.dsp.exec_cmd("~/.config/rofi/poweroff.sh"), { description = "Rofi power menu" })
+bind(mod      .. " + SPACE", hl.dsp.exec_cmd(AppLauncher), { description = "App launcher" })
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 -- ┃                  Session / Waybar / Reload                  ┃
@@ -30,7 +31,7 @@ bind(modctrl .. " + B", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"), { descriptio
 bind(modctrl .. " + N", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"), { description = "Kill waybar" })
 bind(
   modctrl .. " + R",
-  hl.dsp.exec_cmd("hyprctl reload | notify-send 'Hyprctl Reload Complete'"),
+  hl.dsp.exec_cmd('hyprctl reload && hyprctl notify 1 1500 0 "fontsize:15 Hyprctl Reload"'),
   { description = "Reload Hyprland config" }
 )
 
