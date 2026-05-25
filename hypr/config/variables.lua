@@ -28,7 +28,7 @@ local colors = {
 
 -- Dynamic colors
 local color_table = nil
-local handle = io.popen("/home/linuxbrew/.linuxbrew/bin/termcolors --source ghostty --include-aliases", "r")
+local handle = io.popen(TermColors .. " --source ghostty --include-aliases", "r")
 if handle then
   local result = handle:read("*a")
   handle:close()

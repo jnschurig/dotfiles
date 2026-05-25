@@ -21,7 +21,8 @@ bind(modshift .. " + F", hl.dsp.window.float({ action = "toggle" }), { descripti
 bind(mod      .. " + Y", hl.dsp.window.pin(), { description = "Pin window across workspaces" })
 bind(modshift .. " + Y", hl.dsp.layout("togglesplit"), { description = "Toggle split (dwindle)" })
 bind(modshift .. " + P", hl.dsp.exec_cmd("~/.config/rofi/poweroff.sh"), { description = "Rofi power menu" })
-bind(mod      .. " + SPACE", hl.dsp.exec_cmd(AppLauncher), { description = "App launcher" })
+bind(modshift .. " + SPACE", hl.dsp.exec_cmd(AppLauncher), { description = "App launcher" })
+bind(mod      .. " + SPACE", hl.dsp.exec_cmd("hyprlauncher"), { description = "App launcher" })
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 -- ┃                  Session / Waybar / Reload                  ┃
@@ -31,7 +32,7 @@ bind(modctrl .. " + B", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"), { descriptio
 bind(modctrl .. " + N", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"), { description = "Kill waybar" })
 bind(
   modctrl .. " + R",
-  hl.dsp.exec_cmd('hyprctl reload && hyprctl notify 1 1500 0 "fontsize:15 Hyprctl Reload"'),
+  hl.dsp.exec_cmd('~/git/dotfiles/hypr/hyprtoolkit_color.sh && hyprctl reload && hyprctl notify 1 1500 0 "fontsize:15 Hyprctl Reload"'),
   { description = "Reload Hyprland config" }
 )
 
