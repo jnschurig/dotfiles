@@ -11,3 +11,5 @@
 require("config.lazy")
 
 vim.opt.clipboard = "unnamedplus"
+local opt = vim.opt
+opt.wrap = false
