@@ -10,6 +10,7 @@ local startup = {
 	"blueman-applet",
 	"systemctl --user import-environment",
 	"dbus-update-activation-environment --systemd",
+	"tailscale systray",
 }
 
 hl.on("hyprland.start", function()
