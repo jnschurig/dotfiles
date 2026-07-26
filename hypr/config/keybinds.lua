@@ -12,17 +12,17 @@ end
 -- ┃                       General                               ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-bind(mod      .. " + E", hl.dsp.exec_cmd(FileManager), { description = "Open file manager" })
-bind("Print"           , hl.dsp.exec_cmd(CaptureFull), { description = "Screen capture selection" })
-bind("SHIFT + Print"   , hl.dsp.exec_cmd(CaptureArea), { description = "Screen capture selection" })
-bind(mod      .. " + Q", hl.dsp.window.close(), { description = "Close active window" })
-bind(mod      .. " + F", hl.dsp.window.fullscreen(), { description = "Toggle fullscreen" })
+bind(mod .. " + E", hl.dsp.exec_cmd(FileManager), { description = "Open file manager" })
+bind("Print", hl.dsp.exec_cmd(CaptureFull), { description = "Screen capture selection" })
+bind("SHIFT + Print", hl.dsp.exec_cmd(CaptureArea), { description = "Screen capture selection" })
+bind(mod .. " + Q", hl.dsp.window.close(), { description = "Close active window" })
+bind(mod .. " + F", hl.dsp.window.fullscreen(), { description = "Toggle fullscreen" })
 bind(modshift .. " + F", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
-bind(mod      .. " + Y", hl.dsp.window.pin(), { description = "Pin window across workspaces" })
+bind(mod .. " + Y", hl.dsp.window.pin(), { description = "Pin window across workspaces" })
 bind(modshift .. " + Y", hl.dsp.layout("togglesplit"), { description = "Toggle split (dwindle)" })
 bind(modshift .. " + P", hl.dsp.exec_cmd("~/.config/rofi/poweroff.sh"), { description = "Rofi power menu" })
 bind(modshift .. " + SPACE", hl.dsp.exec_cmd(AppLauncher), { description = "App launcher" })
-bind(mod      .. " + SPACE", hl.dsp.exec_cmd("hyprlauncher"), { description = "App launcher" })
+bind(mod .. " + SPACE", hl.dsp.exec_cmd("hyprlauncher"), { description = "App launcher" })
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 -- ┃                  Session / Waybar / Reload                  ┃
@@ -32,7 +32,9 @@ bind(modctrl .. " + B", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"), { descriptio
 bind(modctrl .. " + N", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"), { description = "Kill waybar" })
 bind(
   modctrl .. " + R",
-  hl.dsp.exec_cmd('~/git/dotfiles/hypr/hyprtoolkit_color.sh && hyprctl reload && hyprctl notify 1 1500 0 "fontsize:15 Hyprctl Reload"'),
+  hl.dsp.exec_cmd(
+    '~/git/dotfiles/hypr/hyprtoolkit_color.sh && hyprctl reload && hyprctl notify 1 1500 0 "fontsize:15 Hyprctl Reload"'
+  ),
   { description = "Reload Hyprland config" }
 )
 
@@ -73,8 +75,8 @@ bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { description = "Pr
 -- ┃                        Brightness                           ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s +5%"), { repeating = true })
-bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"), { repeating = true })
+bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s +10%"), { repeating = true })
+bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"), { repeating = true })
 bind("SHIFT + XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -d *::kbd_backlight set +33%"), { repeating = true })
 bind(
   "SHIFT + XF86MonBrightnessDown",
@@ -160,7 +162,3 @@ bind(shiftalt .. " + m", hl.dsp.window.move({ workspace = "special:music", follo
 -- NOTE: drag-to-move/resize bindings use the `drag` opt + window.drag/resize dispatchers
 bind("CONTROL + SUPER + ALT_L", hl.dsp.window.drag(), { mouse = true })
 bind("SUPER + ALT_L", hl.dsp.window.resize(), { mouse = true })
-
-
-
-
