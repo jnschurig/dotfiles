@@ -21,8 +21,8 @@ bind(modshift .. " + F", hl.dsp.window.float({ action = "toggle" }), { descripti
 bind(mod .. " + Y", hl.dsp.window.pin(), { description = "Pin window across workspaces" })
 bind(modshift .. " + Y", hl.dsp.layout("togglesplit"), { description = "Toggle split (dwindle)" })
 bind(modshift .. " + P", hl.dsp.exec_cmd("~/.config/rofi/poweroff.sh"), { description = "Rofi power menu" })
-bind(modshift .. " + SPACE", hl.dsp.exec_cmd(AppLauncher), { description = "App launcher" })
-bind(mod .. " + SPACE", hl.dsp.exec_cmd("hyprlauncher"), { description = "App launcher" })
+bind(mod .. " + SPACE", hl.dsp.exec_cmd(AppLauncher), { description = "App launcher" })
+-- bind(mod .. " + SPACE", hl.dsp.exec_cmd("hyprlauncher"), { description = "App launcher" })
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 -- ┃                  Session / Waybar / Reload                  ┃
