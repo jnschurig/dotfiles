@@ -8,18 +8,59 @@ font-style-italic = "Bold Italic"
 font-style-bold-italic = "ExtraBold Italic"
 
 # appearance
-# theme = rose-pine-moon-custom
-# theme = Material Design Colors
-# theme = Adventure Time
 # theme = 12-bit Rainbow
-# theme = Afterglow
-theme = Arcoiris
-# theme = Andromeda
-# theme = Aardvark Blue
-# theme = Desert
-# theme = Alabaster
 # theme = 3024 Day
+# theme = Aardvark Blue
+# theme = Adventure Time
+# theme = Afterglow
+# theme = Alabaster
+# theme = Andromeda
 # theme = Apple System Colors Light
+# theme = Arcoiris
+# theme = Breadog
+# theme = Dawnfox
+# theme = Desert
+# theme = Dracula
+# theme = Everforest Light Med
+# theme = Flexoki Light
+# theme = Hivacruz
+# theme = Hopscotch.256
+# theme = IC Orange PPL
+# theme = IC Green PPL
+# theme = Iceberg Dark
+# theme = Japanesque
+# theme = Light Owl
+# theme = Material
+# theme = Material Design Colors
+# theme = Matte Black
+# theme = Melange Light
+# theme = Modus Operandi Tinted
+# theme = Monokai Pro Light Sun
+# theme = Night Owl
+# theme = Night Owlish Light
+# theme = Nord Light
+# theme = Novel
+# theme = Pale Night Hc
+# theme = Piatto Light
+# theme = Purple Rain
+# theme = Relaxed
+# theme = Rose Pine Dawn
+# theme = rose-pine-moon-custom
+# theme = Selenized Light
+
+# Favorite Themes
+# theme = Andromeda
+# theme = Cyberpunk
+# theme = Dracula
+# theme = IC Green PPL
+# theme = Django
+# theme = Fish Tank
+# theme = Japanesque
+theme = Monokai Pro
+# theme = Pale Night Hc
+# theme = Piatto Light
+# theme = Purple Rain
+# theme = Rose Pine Dawn
 
 # General
 adjust-box-thickness = 1
@@ -36,7 +77,8 @@ custom-shader=./shaders/cursor_blaze.glsl
 
 # Macos
 # font-thicken = true # I go back and forth on this...
-background-opacity = 0.9
+# background-opacity = 0.9 # hyprland broke this
+background-opacity = 1
 background-blur = false
 keybind = global:super+escape=toggle_quick_terminal
 macos-option-as-alt = true

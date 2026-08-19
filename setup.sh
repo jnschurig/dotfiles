@@ -10,3 +10,4 @@
 ./create_link.sh ~/.config/pycodestyle
 ./create_link.sh ~/.config/rofi
 ./create_link.sh ~/.config/waybar
+ln -s $(dirname)/zsh/.zshrc ~/.zshrc
