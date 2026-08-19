@@ -1,7 +1,7 @@
 #!/bin/bash
 
 paru
-sudo pacman -S swayidle ghostty nautilus dolphin popsicle vscode fwupd rofi fuzzel hyprpolkitagent
+sudo pacman -S waybar hyprlauncher swayidle ghostty nautilus dolphin popsicle vscode fwupd rofi fuzzel hyprpolkitagent
 sudo pacman -S neovim lazygit ripgrep fd gsimplecal ripgrep bat ruff fzf jq go rustup
 sudo pacman -S discord lutris steam dolphin-emu legcord
 # paru -S dolphin-emu-primehack-git # has weird package issues...
