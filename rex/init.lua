@@ -12,9 +12,6 @@ rex.bind("ctrl+shift+r", "pane.balance")
 rex.unbind("super+enter")
 rex.unbind("super+shift+d")
 
--- Load sibling modules from this file's directory.
-local dir = debug.getinfo(1, "S").source:match("^@(.*)/[^/]*$") or "."
-package.path = dir .. "/?.lua;" .. package.path
 local toggle_pane = require("toggle_pane")
 
 toggle_pane({

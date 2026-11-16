@@ -5,9 +5,12 @@
     ]
   },
   "diagnostics": {
-    "globals": ["hl", "vim"]
+    "globals": [
+      "hl",
+      "vim",
+      "rex"
+    ]
   },
-
   "Lua.format.defaultConfig": {
     "indent_style": "space",
     "indent_size": "2"
