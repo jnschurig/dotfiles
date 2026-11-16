@@ -13,6 +13,8 @@ rex.bind("ctrl+shift+r", "pane.balance")
 -- Super+Esc: toggle a persistent floating scratch shell.
 -- Hiding detaches the block (it keeps running, nothing is drawn); showing
 -- re-places it beside the focused pane and floats it. One shell per session.
+local ANIM_SECONDS = "0.35"
+
 rex.action({
 	name = "scratch_toggle",
 	title = "Toggle Scratch Pane",
@@ -42,6 +44,11 @@ rex.action({
 			for _, layer in ipairs(w.layers or {}) do
 				for _, b in ipairs(layer.blocks or {}) do
 					if b.label == "scratch" then
+						-- Minimize first so its animation plays, then detach.
+						if layer.kind == "floating" and w.window_id == active.window_id then
+							rex.session.set_layer_state({ layer_id = layer.layer_id, state = "minimized" })
+							rex.exec({ "sleep", ANIM_SECONDS })
+						end
 						check(rex.session.detach_block({ block_id = b.block_id }))
 						if w.window_id == active.window_id then
 							return
@@ -74,10 +81,16 @@ rex.action({
 			block_id = scratch_id,
 			anchor_block_id = active.focused_block_id,
 		}))
-		check(rex.session.float_block({
+		local fl, fe = rex.session.float_block({
 			block_id = scratch_id,
 			bounds = { 0.05, 0.05, 0.9, 0.9 },
-		}))
+		})
+		check(fl, fe)
+		-- Minimize then restore so the restore animation plays.
+		if fl.layer_id then
+			rex.session.set_layer_state({ layer_id = fl.layer_id, state = "minimized" })
+			rex.session.set_layer_state({ layer_id = fl.layer_id, state = "normal", focus = true })
+		end
 		check(rex.session.focus_block({ block_id = scratch_id }))
 	end,
 })
