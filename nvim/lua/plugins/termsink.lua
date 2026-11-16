@@ -4,15 +4,14 @@
 
 return {
   "jnschurig/termsink.nvim",
-  branch = "v0",
+  branch = "main",
   lazy = false,
   priority = 1001,
   config = function()
-    -- vim.g.disable_background = true
     vim.g.material_style = "primary"
     require("termsink").setup({
-      disable = { -- This works, but causes the lualine text to be WHITE
-        background = false,
+      disable = {
+        background = true,
       },
       plugins = {
         -- "neo-tree",
