@@ -32,3 +32,12 @@ d.config({
     },
   },
 })
+
+vim.filetype.add({
+  pattern = {
+    [".*%.j2"] = function(path)
+      local base = path:gsub("%.j2$", "")
+      return vim.filetype.match({ filename = base })
+    end,
+  },
+})

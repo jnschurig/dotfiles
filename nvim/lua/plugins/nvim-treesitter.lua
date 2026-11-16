@@ -13,6 +13,7 @@ return {
         "c",
         "css",
         "html",
+        "javascript",
         "json",
         "json5",
         -- "latex",
